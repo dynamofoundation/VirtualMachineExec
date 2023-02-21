@@ -59,7 +59,8 @@ namespace vm
             EXECUTE = 34,
             PREVHASH = 35,
             EXECCOUNTC = 36,
-            EXECCOUNTB = 37
+            EXECCOUNTB = 37,
+            JMP = 38
         };
 
         public enum eSourceDestType {
@@ -294,7 +295,8 @@ namespace vm
                        ((opcode1 == (byte)eOpcodes.JLT) && (compareFlags[(byte)eCompareFlags.JLT])) ||
                        ((opcode1 == (byte)eOpcodes.JLTE) && (compareFlags[(byte)eCompareFlags.JLTE])) ||
                        ((opcode1 == (byte)eOpcodes.JGT) && (compareFlags[(byte)eCompareFlags.JGT])) ||
-                       ((opcode1 == (byte)eOpcodes.JGTE) && (compareFlags[(byte)eCompareFlags.JGTE])) 
+                       ((opcode1 == (byte)eOpcodes.JGTE) && (compareFlags[(byte)eCompareFlags.JGTE])) ||
+                       (opcode1 == (byte)eOpcodes.JMP)
                         )
                         PC = offset;
                 }
